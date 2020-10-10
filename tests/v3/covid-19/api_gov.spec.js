@@ -17,6 +17,7 @@ const countries = [
 	'India',
 	'New Zealand',
 	'South Africa',
+	'South Korea',
 	'UK',
 	'Israel',
 	'Vietnam'
@@ -516,7 +517,7 @@ describe('TESTING /v3/covid-19/gov/vietnam', () => {
 describe('TESTING /v3/covid-19/gov/south korea', () => {
 	it('/v3/covid-19/gov/south korea correct fields set', (done) => {
 		chai.request(app)
-			.get('/v3/covid-19/gov/south korea')
+			.get('/v3/covid-19/gov/south%20korea')
 			.end((err, res) => {
 				testBasicProperties(err, res, 200, 'array');
 				res.body[0].should.have.property('updated');
